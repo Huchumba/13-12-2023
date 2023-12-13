@@ -21,6 +21,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+
+
+      - run: docker build
+
+      - run: docker push 
       
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
